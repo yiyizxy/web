@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>smile</title>
+</head>
+<body>
+    <canvas id="canvas" width="640" height="500" style="box-shadow: 4px 4px 12px #333;display: block;margin:60px auto;background: #43EF0C"></canvas>
+    <script>
+        var canvas=document.getElementById("canvas");
+        var context=canvas.getContext("2d");
+
+        //脸
+        context.arc(320,225,200,0,2*Math.PI);
+        var face=context.createRadialGradient(320,225,140,320,225,200);
+        // createLinearGradient(xStart, yStart, radiusStart, xEnd, yEnd, radiusEnd),起始圆半径，终点圆半径
+        face.addColorStop(0,"#f0e720");
+        face.addColorStop(1,"#ffca3c");
+        //颜色径向渐变：沿着圆形的半径方向向外进行扩散的渐变方式
+        //context.createLinearGradient(xStart, yStart, xEnd, yEnd);线性渐变
+        context.fillStyle=face;
+        context.fill();
+        //嘴
+        context.beginPath();
+        context.arc(320,225, 140,0,2*Math.PI);
+        context.fillStyle="#7f2e00";
+        context.fill();
+        context.beginPath();
+        context.arc(320,215,140, 0, 2*Math.PI);
+        context.fillStyle="#f0e720";
+        context.fill();
+        context.closePath();
+        //左边眉毛
+        context.beginPath();
+        context.moveTo(162,78);
+        context.quadraticCurveTo(189,22,235,95);
+        context.quadraticCurveTo(194,44,162,78);
+        context.stroke();
+        //二次贝塞尔曲线
+        context.fillStyle = "#000";
+        context.fill();
+        context.closePath();
+        //右边眉毛
+        context.beginPath();
+        context.moveTo(472,78);
+        context.quadraticCurveTo(445,22,399,95);
+        context.quadraticCurveTo(448,44,472,78);
+        context.stroke();
+        context.fillStyle = "#000";
+        context.fill();
+        context.closePath();
+        //左眼
+        context.lineWidth = 5;
+        context.strokeStyle = "#75291c";
+        context.beginPath();
+        context.moveTo(136,127);
+        context.bezierCurveTo(176,100,226,100,266,127);
+        context.bezierCurveTo(272,134,268,146,256,147);
+        context.bezierCurveTo(226,124,176,124,140,147);
+        context.bezierCurveTo(126,142,126,134,136,127);
+        context.stroke();
+        //三次贝塞尔曲线，书P115
+        context.fillStyle = "#fff";
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
+        context.fillStyle = "#333";
+        // myCanvas.arc(156,128,16,0,2*Math.PI,true);
+        context.arc(180,120,16,0,2*Math.PI,true);
+        context.fill();
+        context.closePath();
+        //右眼
+        context.beginPath();
+        context.moveTo(372,127);
+        context.bezierCurveTo(412,100,462,100,502,127);
+        context.bezierCurveTo(508,134,504,146,492,147);
+        context.bezierCurveTo(462,124,412,124,376,147);
+        context.bezierCurveTo(362,142,362,134,372,127);
+        context.stroke();
+        context.fillStyle = "#fff";
+        context.fill();
+
+        context.beginPath();
+        context.fillStyle = "#333";
+        context.arc(420,120,16,0,2*Math.PI,true);
+        context.fill();
+        context.closePath();
+
+        //左边腮红
+        context.beginPath();
+        context.strokeStyle = "#D90909";
+        context.fillStyle = "#D90909";
+        EllipseTwo(context,200,160,26,12);
+        context.fill();
+        context.stroke();
+        context.closePath();
+
+        //右边腮红
+        context.beginPath();
+        context.strokeStyle = "#D90909";
+        context.fillStyle = "#D90909";
+        EllipseTwo(context,436,160,26,12);
+        context.fill();
+        context.stroke();
+
+        //绘制椭圆方法
+        function EllipseTwo(context, x, y, a, b) {
+            context.save();//书p145
+            var r = (a > b) ? a : b;
+            var ratioX = a / r;
+            var ratioY = b / r;
+            context.scale(ratioX, ratioY);
+            context.beginPath();
+            context.arc(x / ratioX, y / ratioY, r, 0, 2 * Math.PI, false);
+            context.closePath();
+            context.restore();
+            context.stroke();
+        }
+    </script>
+</body>
+</html>
