@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gluttonous Snake</title>
+	<style>
+		#gamePan{
+			margin:50px auto;
+			border-width:1px 0 0 1px;
+			border-style:solid;
+			border-color:#CCC;
+		}
+		.smallPan{
+			width:19px;
+			height:19px;
+			border-width:0 1px 1px 0;
+			border-style:solid;
+			border-color:#CCC;
+			float:left;
+		}
+		#topPan{
+			margin:20px auto;
+			width:320px;
+			height: 30px;
+		}
+		.topButton{
+			position: relative;
+			margin: 10px auto;
+		}
+		#begin{
+			width: 100px;
+			height: 50px;
+			border-radius: 25px;
+			position: absolute;
+			left: 10px;
+			background-color: pink;
+		}
+		#newGame{
+			width: 100px;
+			height: 50px;
+			border-radius: 25px;
+			position: absolute;
+			right: 180px;
+			background-color: pink;
+		}
+		#score{
+			position: relative;
+			width: 120px;
+			height: 50px;
+			line-height: 50px;
+			padding-left: 20px;
+			border-radius: 25px;
+			position: absolute;
+			right: 10px;
+			background-color: pink;
+		}
+		#value{
+			position: absolute;
+			right: 40px;
+		}
+	</style>
+	<script style='text/javascript' src='js/main.js'></script>
+</head>
+<!-- <body onload = 'drawPan()' onkeydown="handleKeyPress(event);"> -->
+<body>
+    <div id="topPan">
+	    <div class="topButton">
+		    <button id="begin">开始</button>
+	        <button id="newGame">新游戏</button>
+	        <span id="score">总分：<span id="value"></span></span>
+	    </div>
+     </div>
+	<div id="gamePan"></div>
+</body>
+</html>
