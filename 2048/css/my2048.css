@@ -1,0 +1,123 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	outline: 0px;
+	font-family: Cambria, Times, "Times New Roman", serif;
+	list-style-type: none; 
+}
+body{
+	overflow: hidden;
+}
+div#scorebar{
+	width: 500px;
+	height: 100px;
+	margin: 0 auto;
+	line-height: 100px;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 600;
+	color: #000000;
+}
+ul,li,li:after{
+	border-radius: 8px;
+}
+ul#gameboard{
+	position: relative;
+	display: block;
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	background-color: #FCE10A;
+	padding: 3px;
+}
+ul#gameboard li{
+	position: relative;
+	width: 115px;
+	height: 115px;
+	float: left;
+	margin: 5px;
+	background-color: #3AF10C;
+}
+ul#gameboard li:after{
+	content: '';
+	display: block;
+	width: 115px;
+	height: 115px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	line-height: 115px;
+	text-align: center;
+	background-color: #3AF10C;
+	font-size: 50px;
+	font-weight: 900;
+	transition: all .3s;
+
+}
+ul#gameboard li.v2:after{
+	content: '2';
+	color: #403838;
+	background-color: #05FE9C;
+	transition: all .3s;
+}
+ul#gameboard li.v4:after{
+	content: '4';
+	color: #403838;
+	background-color: #05FE9C;
+	transition: all .3s;
+}
+ul#gameboard li.v8:after{
+	content: '8';
+	color: #252222;
+	background-color: #18B97A;
+	transition: all .3s;
+}
+ul#gameboard li.v16:after{
+	content: '16';
+	color: #252222;
+	background-color: #937AEA;
+	transition: all .3s;
+}
+ul#gameboard li.v32:after{
+	content: '32';
+	color: #252222;
+	background-color: #DE3D7E;
+	transition: all .3s;
+}
+ul#gameboard li.v64:after{
+	content: '64';
+	color: #252222;
+	background-color: #6D4ED7;
+	transition: all .3s;
+}
+ul#gameboard li.v128:after{
+	content: '128';
+	color: #252222;
+	background-color: #A697E3;
+	transition: all .3s;
+}
+ul#gameboard li.v256:after{
+	content: '256';
+	color: #252222;
+	background-color: #405FE9;
+	transition: all .3s;
+}
+ul#gameboard li.v512:after{
+	content: '512';
+	color: #252222;
+	background-color: #168AFB;
+	transition: all .3s;
+}
+ul#gameboard li.v1024:after{
+	content: '1024';
+	color: #252222;
+	background-color: #0C9641;
+	transition: all .3s;
+}
+ul#gameboard li.v4028:after{
+	content: '4028';
+	color: #252222;
+	background-color: #FE001F;
+	transition: all .3s;
+}
