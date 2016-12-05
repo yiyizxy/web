@@ -1,0 +1,14 @@
+.container{
+   //  -webkit-column-width:160px;
+   //  -moz-column-width:160px; 
+	  // -webkit-column-gap:5px;
+	  // -moz-column-gap:5px;
+	   -webkit-column-count:6;
+    -moz-column-count:6; 
+}
+
+
+/*数据块 砖块*/
+
+.container div{width:160px;
+               margin:4px 0;}
